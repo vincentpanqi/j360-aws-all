@@ -31,7 +31,6 @@ import com.amazonaws.services.s3.AmazonS3Client;
 import com.amazonaws.services.s3.model.*;
 
 import java.io.*;
-import java.util.UUID;
 
 /**
  * This sample demonstrates how to make basic requests to Amazon S3 using the
@@ -71,10 +70,10 @@ public class S3Sample {
         }
 
         AmazonS3 s3 = new AmazonS3Client(credentials);
-        Region usWest2 = Region.getRegion(Regions.US_WEST_2);
+        Region usWest2 = Region.getRegion(Regions.AP_SOUTHEAST_1);
         s3.setRegion(usWest2);
 
-        String bucketName = "my-first-s3-bucket-" + UUID.randomUUID();
+        String bucketName = "fps3-sptest";
         String key = "MyObjectKey";
 
         System.out.println("===========================================");
@@ -90,8 +89,8 @@ public class S3Sample {
              * You can optionally specify a location for your bucket if you want to
              * keep your data closer to your applications or users.
              */
-            System.out.println("Creating bucket " + bucketName + "\n");
-            s3.createBucket(bucketName);
+            //System.out.println("Creating bucket " + bucketName + "\n");
+            //s3.createBucket(bucketName);
 
             /*
              * List the buckets in your account
